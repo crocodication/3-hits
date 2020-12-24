@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@brainhubeu/react-carousel": "1.19.26",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
     "@testing-library/user-event": "12.6.0",
+    "@types/brainhubeu__react-carousel": "2.0.2",
     "@types/jest": "26.0.19",
     "@types/node": "12.19.9",
     "@types/react": "16.14.2",
@@ -44,9 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@brainhubeu/react-carousel": "1.19.26",
-    "@types/brainhubeu__react-carousel": "2.0.2"
   }
 }
