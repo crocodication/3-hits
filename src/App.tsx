@@ -8,7 +8,9 @@ import PageDetail from './screens/page-detail'
 import contents from './references/contents'
 
 export default () => (
-  <Router>
+  <Router
+    basename={process.env.PUBLIC_URL}
+  >
     <Switch>
       <Route
         exact path = '/'
@@ -37,7 +39,7 @@ export default () => (
                 content = {content.slides[0].description}
               />
             </Helmet>
-            
+
             <PageDetail
               content = {content}
             />
