@@ -3,7 +3,7 @@ const colorScheme = {
     innerBackground: '#222831',
     title: '#ffd369',
     description: '#eeeeee',
-    imageBackground: 'gainsboro'
+    imageBackground: 'dimgray'
 }
 
 export default colorScheme

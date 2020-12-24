@@ -1,7 +1,7 @@
 type SlideType = {
     id: number,
     title: string,
-    imageURL: string,
+    image: any,
     description?: string
 }
 

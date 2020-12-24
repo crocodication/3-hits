@@ -1,21 +1,23 @@
+import { Link } from 'react-router-dom'
+
 import colorScheme from '../references/color-scheme'
 
 import SlideType from '../references/types/slide'
 
 type SlidePropsType = {
-    slide: SlideType
+    slide: SlideType,
+    exampleLink?: string
 }
 
 export default (props: SlidePropsType) => {
   const dimensionLimit = {
-    min: 350,
+    min: 300,
     max: 650
   }
 
   return (
     <div
       style = {{
-        borderRadius: 30,
         maxWidth: dimensionLimit.max,
         minWidth: dimensionLimit.min,
         padding: 20,
@@ -70,7 +72,7 @@ export default (props: SlidePropsType) => {
           }}
         >
           <img
-            src = {props.slide.imageURL}
+            src = {props.slide.image}
             style = {{
               height: dimensionLimit.min - 40,
               objectFit: 'contain',
@@ -79,6 +81,59 @@ export default (props: SlidePropsType) => {
           />
         </div>
       </div>
+
+      {
+        props.exampleLink ?
+          <>
+            <a
+              href = {props.exampleLink}
+              rel = 'noopener noreferrer'
+              target = '_blank'
+              style = {{
+                textDecorationLine: 'none'
+              }}
+            >
+              <p
+                style = {{
+                  backgroundColor: 'forestgreen',
+                  borderRadius: 5,
+                  boxShadow: '6px 6px 2px rgba(240, 240, 240, 0.025)',
+                  color: 'white',
+                  fontWeight: 'bold',
+                  marginTop: 20,
+                  padding: 10,
+                  textAlign: 'center'
+                }}
+              >
+                Open Editable Example
+              </p>
+            </a>
+
+            <Link
+              to = '/'
+              style = {{
+                textDecorationLine: 'none'
+              }}
+            >
+              <p
+                style = {{
+                  backgroundColor: 'gray',
+                  borderRadius: 5,
+                  boxShadow: '6px 6px 2px rgba(240, 240, 240, 0.025)',
+                  color: 'white',
+                  fontWeight: 'bold',
+                  marginTop: 20,
+                  padding: 10,
+                  textAlign: 'center'
+                }}
+              >
+                Go To Homepage
+              </p>
+            </Link>
+          </>
+          :
+          null
+      }
     </div>
   )
 }
