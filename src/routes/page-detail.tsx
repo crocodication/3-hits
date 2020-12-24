@@ -83,9 +83,7 @@ export default () => (
       >
         <h2
           style = {{
-            color: colorScheme.title,
-            fontFamily: 'verdana',
-            margin: 0
+            color: colorScheme.title
           }}
         >
           {content.title}
@@ -94,7 +92,6 @@ export default () => (
         <div
           style = {{
             color: colorScheme.description,
-            fontFamily: 'verdana',
             marginTop: 5
           }}
         >

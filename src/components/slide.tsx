@@ -7,76 +7,78 @@ type SlidePropsType = {
 }
 
 export default (props: SlidePropsType) => {
-    return (
+  const dimensionLimit = {
+    min: 350,
+    max: 650
+  }
+
+  return (
+    <div
+      style = {{
+        borderRadius: 30,
+        maxWidth: dimensionLimit.max,
+        minWidth: dimensionLimit.min,
+        padding: 20,
+        width: '100%'
+      }}
+    >
       <div
         style = {{
-          padding: 10
+          backgroundColor: colorScheme.innerBackground,
+          borderTopLeftRadius: 5,
+          borderTopRightRadius: 5,
+          boxShadow: '6px 6px 2px rgba(240, 240, 240, 0.025)',
+          display: 'flex',
+          flex: 1,
+          flexDirection: 'column'
         }}
       >
         <div
           style = {{
-            backgroundColor: colorScheme.innerBackground,
-            borderRadius: 5,
-            boxShadow: '6px 6px 2px rgba(240, 240, 240, 0.025)',
-            display: 'flex',
-            flexDirection: 'row',
-            height: 400,
-            width: 750
+            padding: 20
           }}
         >
-          <div
+          <h2
             style = {{
-              display: 'flex',
-              flex: 1,
-              flexDirection: 'column',
-              padding: 20
+              color: colorScheme.title
             }}
           >
-            <h2
-              style = {{
-                color: colorScheme.title,
-                fontFamily: 'verdana',
-                margin: 0
-              }}
-            >
-              {props.slide.title}
-            </h2>
-  
-            {
-              props.slide.description != undefined ?
-                <p
-                  style = {{
-                    color: colorScheme.description,
-                    fontFamily: 'verdana',
-                    margin: 0,
-                    marginTop: 5
-                  }}
-                >
-                  {props.slide.description}
-                </p>
-                :
-                null
-            }
-          </div>
-  
-          <div
+            {props.slide.title}
+          </h2>
+
+          {
+            props.slide.description != undefined ?
+              <p
+                style = {{
+                  color: colorScheme.description,
+                  marginTop: 5
+                }}
+              >
+                {props.slide.description}
+              </p>
+              :
+              null
+          }
+        </div>
+
+        <div
+          style = {{
+            backgroundColor: colorScheme.imageBackground,
+            borderBottomLeftRadius: 5,
+            borderBottomRightRadius: 5,
+            padding: 20
+          }}
+        >
+          <img
+            src = {props.slide.imageURL}
             style = {{
-              backgroundColor: colorScheme.imageBackground,
-              height: 360,
-              padding: 20,
-              width: 360
+              height: dimensionLimit.min - 40,
+              objectFit: 'contain',
+              width: '100%'
             }}
-          >
-            <img
-              height = '100%'
-              src = {props.slide.imageURL}
-              style = {{
-                objectFit: 'contain'
-              }}
-              width = '100%'
-            />
-          </div>
+          />
         </div>
       </div>
-    )
+    </div>
+  )
 }
