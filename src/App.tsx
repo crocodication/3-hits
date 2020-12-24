@@ -8,9 +8,7 @@ import PageDetail from './screens/page-detail'
 import contents from './references/contents'
 
 export default () => (
-  <Router
-    basename={process.env.PUBLIC_URL}
-  >
+  <Router>
     <Switch>
       <Route
         exact path = '/'
